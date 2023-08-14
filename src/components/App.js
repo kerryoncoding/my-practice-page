@@ -16,6 +16,8 @@ function App() {
 
   function filterSubmit(value){
     console.log("lifted:", value)
+    let filtered = names.filter((item)=> item.name.toLowerCase().includes(value))
+    setNames(filtered)
   }
 
   return (
