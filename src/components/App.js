@@ -14,10 +14,13 @@ function App() {
     .then(data=>setNames(data))
   }, [])
 
+  function filterSubmit(value){
+    console.log("lifted:", value)
+  }
 
   return (
     <div>
-      <Form />
+      <Form filterSubmit={filterSubmit} />
       <List names={names}/>
     </div>
   );
