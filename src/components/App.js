@@ -14,15 +14,20 @@ function App() {
     .then(data=>setNames(data))
   }, [])
 
-  function filterSubmit(value){
+  //original formSubmit would filter list
+  // function formSubmit(value){
+  //   console.log("lifted:", value)
+  //   let filtered = names.filter((item)=> item.name.toLowerCase().includes(value))
+  //   setNames(filtered)
+  // }
+
+  function formSubmit(value){
     console.log("lifted:", value)
-    let filtered = names.filter((item)=> item.name.toLowerCase().includes(value))
-    setNames(filtered)
   }
 
   return (
     <div>
-      <Form filterSubmit={filterSubmit} />
+      <Form formSubmit={formSubmit} />
       <List names={names}/>
     </div>
   );
@@ -33,3 +38,6 @@ export default App;
 
 // upon loading fetch data and present in a list
 // have a form where you can search to refine the list
+
+// now update the form to add an item to the list
+
